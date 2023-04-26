@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Oxanium', cursive;
+}
+
+body {
+  text-align: center;
+  background: linear-gradient(to top, #1f60b0, white, #ffcb08);
+  min-height: 100vh;
+}
+
+main {
+  display: inline-block;
+  margin-top: 2%;
+  padding: 15px;
+  position: relative;
+}
+
+.title {
+  width: 50%;
+}
+
+.pokedex {
+  width: 100%;
+  max-width: 892px;
+}
+
+.pokemon__image {
+  position: absolute;
+  bottom: 49%;
+  left: 22%;
+  height: 13%;
+}
+
+.pokemon__data {
+  position: absolute;
+  font-weight: 600;
+  color: #aaa;
+  top: 54.5%;
+  right: 59.5%;
+  font-size: clamp(8px, 3vw, 25px);
+}
+
+.pokemon__name {
+  color: #3a444d;
+  text-transform: capitalize;
+}
+
+.form {
+  position: absolute;
+  width: 35.5%;
+  top: 66%;
+  left: 8.5%;
+}
+
+.input__search {
+  width: 100%;
+  padding: 4.5%;
+  outline: none;
+  border: 2px solid #333;
+  border-radius: 5px;
+  font-weight: 600;
+  color: #3a444d;
+  font-size: clamp(8px, 5vw, 0.9rem);
+  box-shadow: -3px 4px 0 #888, -5px 7px 0 #333;
+}
+
+.buttons {
+  position: absolute;
+  bottom: 12%;
+  left: 8.8%;
+  width: 35%;
+  display: flex;
+  gap: 21px;
+}
+
+.button {
+  width: 50%;
+  padding: 4.5%;
+  border: 2px solid #000;
+  border-radius: 5px;
+  font-size: clamp(8px, 5vw, 0.9rem);
+  font-weight: 600;
+  color: white;
+  background-color: #444;
+  box-shadow: -2px 3px 0 #222, -4px 6px 0 #000;
+}
+
+.button:active {
+  box-shadow: inset -4px 4px 0 #222;
+  font-size: 0.8rem;
+}
+
+.type-buttons {
+  position: absolute;
+  right: 6.7%;
+  bottom: 26%;
+  height: 18%;
+  width: 35%;
+  background-color: #444;
+  display: grid;
+  grid-template-columns: repeat(6, 16.6%);
+  grid-template-rows: repeat(3, 33.3%);
+  border: 2px solid #000;
+  border-radius: 5px;
+  box-shadow: -2px 1px 0 #222, -3px 3px 0 #000;
+}
+
+.btn-type {
+  color: white;
+  font-size: 9px;
+  border: none;
+  border-top: 1.5px solid black;
+  border-left: 1.5px solid black;
+  background-color: inherit;
+  font-weight: 700;
+}
+
+.btn-type:active {
+  box-shadow: inset -1px 1px 0 #222;
+  font-size: 8.5px;
+}
+
+.btn-type:nth-child(6n + 1) {
+  border-left: none;
+}
+
+.btn-type:nth-child(-n + 6) {
+  border-top: none;
+}
+
+.btn-type:nth-last-child(-n + 6) {
+  border-bottom: none;
+}
+
+.screen {
+  /* font-size: 10px; */
+  color: #282b2e;
+  z-index: -1;
+  width: 38%;
+  height: 23%;
+  padding: 15px;
+  position: absolute;
+  background-color: rgb(20, 92, 16);
+  top: 31%;
+  right: 4.5%;
+  text-align: left;
+}
+
+.screen span {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+}
+
+.label {
+  color: black;
+  font-weight: 500;
+}
+
+.background {
+  z-index: -1;
+  width: 35%;
+  position: absolute;
+  bottom: 46.5%;
+  right: 54%;
+}
