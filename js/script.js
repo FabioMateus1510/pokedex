@@ -91,52 +91,49 @@ form.addEventListener('submit', (event) => {
   input.value = '';
 });
 
+const turnOn = () => {
+  btnType.forEach((button) => (button.disabled = false));
+  btnAll.disabled = false;
+  btnPrev.disabled = false;
+  btnNext.disabled = false;
+  input.disabled = false;
+  label.forEach((label) => (label.style.opacity = 1));
+  height.style.opacity = 1;
+  weight.style.opacity = 1;
+  abilities.style.opacity = 1;
+  category.style.opacity = 1;
+  counter.style.opacity = 1;
+  pokemonImage.style.opacity = 1;
+  background.style.opacity = 1;
+  counter.innerText = pokemonData.length;
+  tipo = '';
+  searchPokemon = 1;
+  pokemon = pokemonData.filter((pk) => pk.id === searchPokemon);
+  renderPokemon(pokemon[0]);
+};
+
+const turnOff = () => {
+  btnType.forEach((button) => (button.disabled = true));
+  btnAll.disabled = true;
+  btnPrev.disabled = true;
+  btnNext.disabled = true;
+  input.disabled = true;
+  label.forEach((label) => (label.style.opacity = 0));
+  height.style.opacity = 0;
+  weight.style.opacity = 0;
+  abilities.style.opacity = 0;
+  category.style.opacity = 0;
+  counter.style.opacity = 0;
+  pokemonImage.style.opacity = 0;
+  background.style.opacity = 0;
+};
+
 btnOnOff.addEventListener('click', () => {
   if (onOff === 0) {
-    btnType.forEach(function (button) {
-      button.disabled = false;
-    });
-    btnAll.disabled = false;
-    btnPrev.disabled = false;
-    btnNext.disabled = false;
-    input.disabled = false;
-    label.forEach(function (label) {
-      label.style.opacity = '1';
-    });
-    height.style.opacity = 1;
-    weight.style.opacity = 1;
-    abilities.style.opacity = 1;
-    category.style.opacity = 1;
-    counter.style.opacity = 1;
-    pokemonImage.style.opacity = 1;
-    background.style.opacity = 1;
-    counter.innerText = pokemonData.length;
-    tipo = '';
-    searchPokemon = 1;
-    pokemon = pokemonData.filter((pk) => pk.id === searchPokemon);
-    renderPokemon(pokemon[0]);
+    turnOn();
     onOff = 1;
-    return null;
-  }
-  if (onOff === 1) {
-    btnType.forEach(function (button) {
-      button.disabled = true;
-    });
-    btnAll.disabled = true;
-    btnPrev.disabled = true;
-    btnNext.disabled = true;
-    input.disabled = true;
-    label.forEach(function (label) {
-      label.style.opacity = 0;
-    });
-    height.style.opacity = 0;
-    weight.style.opacity = 0;
-    abilities.style.opacity = 0;
-    category.style.opacity = 0;
-    counter.style.opacity = 0;
-    pokemonImage.style.opacity = 0;
-    background.style.opacity = 0;
-    // background.src = `img/backgrounds/blackBackground.jpg`;
+  } else {
+    turnOff();
     onOff = 0;
   }
 });
