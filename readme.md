@@ -12,6 +12,6 @@ Para executar o projeto, basta clonar este repositório em seu computador e abri
 
 # Como Executar o Projeto
 
-Para executar o projeto, basta clonar este repositório em seu computador e abrir o arquivo index.html em um navegador de sua preferência.
+https://fabiomateus1510.github.io/pokedex/
 
 <img src="img/exemplo.gif">
