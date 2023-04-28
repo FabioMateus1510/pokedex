@@ -8,15 +8,16 @@ const height = document.querySelector('.info-height');
 const weight = document.querySelector('.info-weight');
 const abilities = document.querySelector('.info-abilities');
 const category = document.querySelector('.info-category');
+const counter = document.querySelector('.info-counter');
 
 const form = document.querySelector('.form');
 const input = document.querySelector('.input__search');
 
 const btnPrev = document.querySelector('.btn-prev');
-
 const btnNext = document.querySelector('.btn-next');
+const btnAll = document.querySelector('.btn-all');
 
-let searchPokemon = 1;
+let searchPokemon = 0;
 let pokemonData = []; // array com todos os dados dos pokemons
 let pokemonFiltered = [];
 let tipo = '';
@@ -24,7 +25,7 @@ let i = 0;
 const fetchPokemonEndPoints = async () => {
   const APIResponse = await fetch(
     // `https://pokeapi.co/api/v2/pokemon/${pokemon}`
-    'https://pokeapi.co/api/v2/pokemon?limit=200'
+    'https://pokeapi.co/api/v2/pokemon?limit=500'
   );
   const data = await APIResponse.json();
   const endpoints = data.results.map((pokemon) => pokemon.url);
@@ -85,23 +86,43 @@ form.addEventListener('submit', (event) => {
   input.value = '';
 });
 
+btnAll.addEventListener('click', () => {
+  counter.innerText = pokemonData.length;
+  tipo = '';
+  searchPokemon = 1;
+  pokemon = pokemonData.filter((pk) => pk.id === searchPokemon);
+  renderPokemon(pokemon[0]);
+});
+
 btnPrev.addEventListener('click', () => {
-  searchPokemon -= 1;
   let pokemon = [];
+  if (searchPokemon === 1) {
+    searchPokemon = pokemonData.length + 1;
+  }
+  if (i === 0) {
+    i = pokemonFiltered.length;
+  }
   if (tipo !== '') {
     i--;
     pokemon = pokemonFiltered[i];
     renderPokemon(pokemon);
   }
   if (tipo === '') {
+    searchPokemon -= 1;
     pokemon = pokemonData.filter((pk) => pk.id === searchPokemon);
     renderPokemon(pokemon[0]);
   }
+  console.log(searchPokemon);
 });
 
 btnNext.addEventListener('click', () => {
-  searchPokemon += 1;
   let pokemon = [];
+  if (searchPokemon === pokemonData.length - 1) {
+    searchPokemon = 0;
+  }
+  if (i === pokemonFiltered.length - 1) {
+    i = -1;
+  }
 
   if (tipo !== '') {
     i++;
@@ -109,13 +130,16 @@ btnNext.addEventListener('click', () => {
     renderPokemon(pokemon);
   }
   if (tipo === '') {
+    searchPokemon += 1;
     pokemon = pokemonData.filter((pk) => pk.id === searchPokemon);
     renderPokemon(pokemon[0]);
   }
+  console.log(searchPokemon);
 });
 
 buttonsType.forEach((button) => {
   button.addEventListener('click', (ev) => {
+    i = 0;
     tipo = ev.target.innerText.toLowerCase();
     console.log(tipo);
     pokemonFiltered = pokemonData.filter((pokemon) =>
@@ -125,6 +149,8 @@ buttonsType.forEach((button) => {
     console.log(teste);
     background.src = `img/backgrounds/${tipo}Background.jpg`;
     renderPokemon(pokemonFiltered[0]);
+    console.log(`quantidade de pokemons deste tipo :${pokemonFiltered.length}`);
+    counter.innerText = pokemonFiltered.length;
   });
 });
 

@@ -101,10 +101,10 @@ main {
 
 .type-buttons {
   position: absolute;
-  right: 6.7%;
+  right: 6.95%;
   bottom: 26%;
   height: 18%;
-  width: 35%;
+  width: 35.2%;
   background-color: #444;
   display: grid;
   grid-template-columns: repeat(6, 16.6%);
@@ -141,6 +141,25 @@ main {
   border-bottom: none;
 }
 
+.counter {
+  z-index: -1;
+  width: 6.5%;
+  height: 5%;
+  padding-top: 6px;
+  padding-left: 3px;
+  position: absolute;
+  background-color: rgb(17, 83, 13);
+  top: 21.5%;
+  right: 35.5%;
+  text-align: left;
+}
+
+.info-counter {
+  color: #232323b0;
+  padding-left: 13px;
+  font-weight: 700;
+}
+
 .screen {
   /* font-size: 10px; */
   color: #282b2e;
@@ -149,7 +168,7 @@ main {
   height: 23%;
   padding: 15px;
   position: absolute;
-  background-color: rgb(20, 92, 16);
+  background-color: rgb(17, 83, 13);
   top: 31%;
   right: 4.5%;
   text-align: left;
@@ -161,7 +180,7 @@ main {
 }
 
 .label {
-  color: black;
+  color: rgba(0, 0, 0, 0.735);
   font-weight: 500;
 }
 
@@ -171,4 +190,24 @@ main {
   position: absolute;
   bottom: 46.5%;
   right: 54%;
+}
+
+.btn-all {
+  color: #757575;
+  background-color: #e3e4e4;
+  padding: 0.9%;
+  position: absolute;
+  bottom: 12%;
+  right: 30%;
+  width: 12%;
+  font-size: 15px;
+  font-weight: 700;
+  border: 2px solid #484848;
+  border-radius: 5px;
+  box-shadow: -2px 1px 0 #656565, -3px 3px 0 #2f2f2f;
+}
+
+.btn-all:active {
+  box-shadow: inset -1px 2px 0 #6e6e6e;
+  font-size: 14px;
 }
