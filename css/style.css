@@ -43,29 +43,44 @@ main {
 }
 
 .pokemon__data {
+  z-index: -1;
+  height: 7%;
+  padding: 5px 0px;
   position: absolute;
   font-weight: 600;
-  color: #aaa;
-  top: 54.5%;
-  right: 59.5%;
+  color: #b9b9b9;
+  top: 57.3%;
+  right: 58.5%;
   font-size: clamp(8px, 3vw, 25px);
+  /* background-color: rgb(17, 83, 13); */
+  background-color: rgb(35, 35, 35);
+
+  width: 25%;
 }
 
 .pokemon__name {
-  color: #3a444d;
+  opacity: 0;
+  transition: opacity 2s;
+  color: rgb(141, 141, 141);
   text-transform: capitalize;
+}
+
+.pokemon__number {
+  opacity: 0;
+  transition: opacity 2s;
 }
 
 .form {
   position: absolute;
   width: 35.5%;
-  top: 66%;
+  /* height: 5%; */
+  top: 71%;
   left: 8.5%;
 }
 
 .input__search {
   width: 100%;
-  padding: 4.5%;
+  padding: 3.2%;
   outline: none;
   border: 2px solid #333;
   border-radius: 5px;
@@ -91,7 +106,7 @@ main {
 .button {
   cursor: pointer;
   width: 50%;
-  padding: 4.5%;
+  padding: 3.2%;
   border: 2px solid #000;
   border-radius: 5px;
   font-size: clamp(8px, 5vw, 0.9rem);
@@ -156,7 +171,7 @@ main {
   padding-top: 6px;
   padding-left: 3px;
   position: absolute;
-  background-color: rgb(17, 83, 13);
+  background-color: rgb(35, 35, 35);
   top: 21.5%;
   right: 35.5%;
   text-align: left;
@@ -165,20 +180,23 @@ main {
 .info-counter {
   transition: opacity 2s;
   opacity: 0;
-  color: #232323b0;
+  color: #b9b9b9;
+
   padding-left: 13px;
   font-weight: 700;
 }
 
 .screen {
   /* font-size: 10px; */
-  color: #282b2e;
+  /* color: #282b2e; */
+  color: #b9b9b9;
   z-index: -1;
   width: 38%;
   height: 23%;
   padding: 15px;
   position: absolute;
-  background-color: rgb(17, 83, 13);
+  background-color: rgb(35, 35, 35);
+  /* background-color: rgb(17, 83, 13); */
   top: 31%;
   right: 4.5%;
   text-align: left;
@@ -194,7 +212,7 @@ main {
 .label {
   transition: opacity 2s;
   opacity: 0;
-  color: rgba(0, 0, 0, 0.735);
+  color: rgba(141, 141, 141);
   font-weight: 500;
 }
 
@@ -202,17 +220,18 @@ main {
   transition: opacity 2s;
   opacity: 0;
   z-index: -1;
-  width: 35%;
+  width: 40%;
   position: absolute;
-  bottom: 46.5%;
+  bottom: 44.5%;
   right: 54%;
 }
 .backgroundOff {
   z-index: -2;
-  width: 35%;
+  width: 32%;
+  height: 27%;
   position: absolute;
-  bottom: 46.5%;
-  right: 54%;
+  bottom: 44.5%;
+  right: 58%;
 }
 
 .btn-all {
@@ -240,16 +259,20 @@ main {
   cursor: pointer;
   z-index: 2;
   position: absolute;
-  top: 32.8%;
-  left: 31.15%;
-  border: 1px solid black;
-  width: 67px;
-  height: 59px;
+  top: 7.4%;
+  left: 8%;
+  border: none;
+  width: 8.2%;
+  height: 9.7%;
   border-radius: 50%;
-  background-color: #0deef7;
+  background-image: url('../img/btnOnOff.png');
+  background-position: center;
+  background-size: cover;
 }
 
 .btn-onoff:active {
-  width: 66px;
-  height: 57.5px;
+  width: 7.95%;
+  height: 9.45%;
+  top: 7.6%;
+  left: 7.9%;
 }

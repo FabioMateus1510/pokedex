@@ -70,7 +70,7 @@ const renderPokemon = async (pokemon) => {
   });
 
   pokemonName.innerHTML = pokemon.name;
-  pokemonNumber.innerHTML = pokemon.id;
+  pokemonNumber.innerHTML = `${pokemon.id} -`;
   height.innerHTML = pokemon.height;
   weight.innerHTML = pokemon.weight;
   category.innerHTML = typesText;
@@ -105,6 +105,9 @@ const turnOn = () => {
   counter.style.opacity = 1;
   pokemonImage.style.opacity = 1;
   background.style.opacity = 1;
+  pokemonName.style.opacity = 1;
+  pokemonNumber.style.opacity = 1;
+
   counter.innerText = pokemonData.length;
   tipo = '';
   searchPokemon = 1;
@@ -126,6 +129,8 @@ const turnOff = () => {
   counter.style.opacity = 0;
   pokemonImage.style.opacity = 0;
   background.style.opacity = 0;
+  pokemonName.style.opacity = 0;
+  pokemonNumber.style.opacity = 0;
 };
 
 btnOnOff.addEventListener('click', () => {
