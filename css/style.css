@@ -33,13 +33,45 @@ main {
   max-width: 800px;
 }
 
-.pokemon__image {
+.btn-onoff {
+  cursor: pointer;
+  z-index: 2;
+  position: absolute;
+  top: 4.9%;
+  left: 7.4%;
+  border: none;
+  width: 8.2%;
+  height: 9.7%;
+  border-radius: 50%;
+  background-image: url('../img/btnOnOff.png');
+  background-position: center;
+  background-size: cover;
+}
+
+.btn-onoff:active {
+  width: 7.95%;
+  height: 9.45%;
+  top: 5%;
+  left: 7.3%;
+}
+
+.background {
   transition: opacity 2s;
   opacity: 0;
+  z-index: -1;
+  width: 40%;
   position: absolute;
-  bottom: 49%;
-  left: 22%;
-  height: 13%;
+  bottom: 48.5%;
+  right: 54%;
+}
+
+.backgroundOff {
+  z-index: -2;
+  width: 32%;
+  height: 27%;
+  position: absolute;
+  top: 25%;
+  right: 58%;
 }
 
 .pokemon__data {
@@ -49,13 +81,21 @@ main {
   position: absolute;
   font-weight: 600;
   color: #b9b9b9;
-  top: 57.3%;
-  right: 58.5%;
+  top: 53.6%;
+  left: 16%;
   font-size: clamp(8px, 3vw, 25px);
   /* background-color: rgb(17, 83, 13); */
   background-color: rgb(35, 35, 35);
-
   width: 25%;
+}
+
+.pokemon__image {
+  transition: opacity 2s;
+  opacity: 0;
+  position: absolute;
+  bottom: 52%;
+  left: 22%;
+  height: 13%;
 }
 
 .pokemon__name {
@@ -72,15 +112,15 @@ main {
 
 .form {
   position: absolute;
-  width: 35.5%;
+  width: 36%;
   /* height: 5%; */
-  top: 71%;
-  left: 8.5%;
+  top: 70%;
+  left: 8.1%;
 }
 
 .input__search {
   width: 100%;
-  padding: 3.2%;
+  padding: 4%;
   outline: none;
   border: 2px solid #333;
   border-radius: 5px;
@@ -97,8 +137,8 @@ main {
 .buttons {
   position: absolute;
   bottom: 12%;
-  left: 8.8%;
-  width: 35%;
+  left: 8%;
+  width: 35.9%;
   display: flex;
   gap: 21px;
 }
@@ -106,7 +146,7 @@ main {
 .button {
   cursor: pointer;
   width: 50%;
-  padding: 3.2%;
+  padding: 3.5%;
   border: 2px solid #000;
   border-radius: 5px;
   font-size: clamp(8px, 5vw, 0.9rem);
@@ -121,10 +161,62 @@ main {
   font-size: 0.8rem;
 }
 
+.counter {
+  z-index: -1;
+  width: 7%;
+  height: 5%;
+  padding-top: 6px;
+  padding-left: 3px;
+  position: absolute;
+  background-color: rgb(35, 35, 35);
+  top: 22%;
+  right: 34%;
+  text-align: left;
+}
+
+.info-counter {
+  transition: opacity 2s;
+  opacity: 0;
+  color: #b9b9b9;
+
+  padding-left: 13px;
+  font-weight: 700;
+}
+
+.screen {
+  /* font-size: 10px; */
+  /* color: #282b2e; */
+  color: #b9b9b9;
+  z-index: -1;
+  width: 33%;
+  height: 23%;
+  padding: 15px;
+  position: absolute;
+  background-color: rgb(35, 35, 35);
+  /* background-color: rgb(17, 83, 13); */
+  top: 29%;
+  right: 8%;
+  text-align: left;
+}
+
+.screen span {
+  transition: opacity 2s;
+  opacity: 0;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+}
+
+.label {
+  transition: opacity 2s;
+  opacity: 0;
+  color: rgba(141, 141, 141);
+  font-weight: 500;
+}
+
 .type-buttons {
   position: absolute;
   right: 6.95%;
-  bottom: 26%;
+  bottom: 23.5%;
   height: 18%;
   width: 35.2%;
   background-color: #444;
@@ -164,83 +256,13 @@ main {
   border-bottom: none;
 }
 
-.counter {
-  z-index: -1;
-  width: 6.5%;
-  height: 5%;
-  padding-top: 6px;
-  padding-left: 3px;
-  position: absolute;
-  background-color: rgb(35, 35, 35);
-  top: 21.5%;
-  right: 35.5%;
-  text-align: left;
-}
-
-.info-counter {
-  transition: opacity 2s;
-  opacity: 0;
-  color: #b9b9b9;
-
-  padding-left: 13px;
-  font-weight: 700;
-}
-
-.screen {
-  /* font-size: 10px; */
-  /* color: #282b2e; */
-  color: #b9b9b9;
-  z-index: -1;
-  width: 38%;
-  height: 23%;
-  padding: 15px;
-  position: absolute;
-  background-color: rgb(35, 35, 35);
-  /* background-color: rgb(17, 83, 13); */
-  top: 31%;
-  right: 4.5%;
-  text-align: left;
-}
-
-.screen span {
-  transition: opacity 2s;
-  opacity: 0;
-  font-family: 'Press Start 2P', cursive;
-  font-size: 10px;
-}
-
-.label {
-  transition: opacity 2s;
-  opacity: 0;
-  color: rgba(141, 141, 141);
-  font-weight: 500;
-}
-
-.background {
-  transition: opacity 2s;
-  opacity: 0;
-  z-index: -1;
-  width: 40%;
-  position: absolute;
-  bottom: 44.5%;
-  right: 54%;
-}
-.backgroundOff {
-  z-index: -2;
-  width: 32%;
-  height: 27%;
-  position: absolute;
-  bottom: 44.5%;
-  right: 58%;
-}
-
 .btn-all {
   cursor: pointer;
   color: #757575;
   background-color: #e3e4e4;
   padding: 0.9%;
   position: absolute;
-  bottom: 12%;
+  bottom: 10%;
   right: 30%;
   width: 12%;
   font-size: 15px;
@@ -253,26 +275,4 @@ main {
 .btn-all:active {
   box-shadow: inset -1px 2px 0 #6e6e6e;
   font-size: 14px;
-}
-
-.btn-onoff {
-  cursor: pointer;
-  z-index: 2;
-  position: absolute;
-  top: 7.4%;
-  left: 8%;
-  border: none;
-  width: 8.2%;
-  height: 9.7%;
-  border-radius: 50%;
-  background-image: url('../img/btnOnOff.png');
-  background-position: center;
-  background-size: cover;
-}
-
-.btn-onoff:active {
-  width: 7.95%;
-  height: 9.45%;
-  top: 7.6%;
-  left: 7.9%;
 }
