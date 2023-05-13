@@ -3,7 +3,7 @@
 Este projeto simula uma Pokédex, que permite ao usuário pesquisar e visualizar informações sobre diferentes pokémons, como nome, número, tipo, habilidades, altura e peso. Além disso, é possível filtrar para que seja exibido somente a quantidade e os dados de pokémons de determinado tipo.
 A Pokédex conta com botões de navegação, filtragem, liga/desliga e campo de pesquisa por nome ou ID.
 
-## ecnologias Utilizadas:
+## tecnologias Utilizadas:
 
 HTML
 CSS
